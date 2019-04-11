@@ -1,0 +1,15 @@
+public static void DBL(String srcPath,String desPath) throws IOException, FileNotFoundException{
+			File src = new File(srcPath);
+			File des = new File(desPath);
+			  BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(des),"utf-8"));
+			  BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(src),"utf-8"));
+			  String info = null;
+		      	while(null!=(info=(br.readLine()))) {
+				        if(1<info.length()) {
+					        bw.write(info);
+					        bw.newLine();
+				                            }
+			  }
+			br.close();
+			bw.close();
+}
