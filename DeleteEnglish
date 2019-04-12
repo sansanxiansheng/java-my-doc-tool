@@ -1,0 +1,23 @@
+public static void DE(String srcPath,String desPath) throws IOException, FileNotFoundException{
+		
+		  File src = new File(srcPath);
+		  File des = new File(desPath);
+		  BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(des),"utf-8"));
+		  BufferedReader br = new BufferedReader(new InputStreamReader(new FileInputStream(src),"utf-8"));
+		  String info = null;
+		  StringBuffer buffer = new StringBuffer();
+		            while(null!=(info=(br.readLine()))) {
+			                char[] ch = info.toCharArray();	
+			                      for(int i = 0; i < ch.length ; i++){
+	                                  if(ch[i] > 'z' && ch[i] < 'A'){
+	                                      buffer.append(ch[i]);
+	                                                                }    
+	                                  String car = buffer.toString();
+	                                  bw.write(car);  
+	         }
+		}
+		br.close();
+		bw.close();
+		
+
+}
